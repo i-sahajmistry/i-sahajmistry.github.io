@@ -8,6 +8,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initThemeToggle();
   initMobileMenu();
   initHeroCanvas();
+  initCardGlows();
+  initParallax();
 });
 
 /* ---------- Navbar scroll behavior ---------- */
@@ -263,5 +265,62 @@ function initHeroCanvas() {
   window.addEventListener('resize', () => {
     resize();
     createParticles();
+  });
+}
+
+/* ---------- Interactive card spotlights ---------- */
+function initCardGlows() {
+  const cards = document.querySelectorAll('.timeline-card, .research-card, .skill-category, .edu-card, .achievement-card, .stat-card');
+  
+  cards.forEach(card => {
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      
+      card.style.setProperty('--mouse-x', `${x}px`);
+      card.style.setProperty('--mouse-y', `${y}px`);
+    });
+  });
+}
+
+/* ---------- Scroll Parallax ---------- */
+function initParallax() {
+  const heroGlow1 = document.querySelector('.hero-glow-1');
+  const heroGlow2 = document.querySelector('.hero-glow-2');
+  const heroContent = document.querySelector('.hero-content');
+  const aboutPhoto = document.querySelector('.about-photo-wrapper');
+  
+  let ticking = false;
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      window.requestAnimationFrame(() => {
+        const scrollY = window.scrollY;
+        
+        if (heroGlow1) {
+          heroGlow1.style.transform = `translate3d(0, ${scrollY * 0.35}px, 0)`;
+        }
+        if (heroGlow2) {
+          heroGlow2.style.transform = `translate3d(0, ${scrollY * 0.2}px, 0)`;
+        }
+        
+        if (heroContent) {
+          heroContent.style.transform = `translate3d(0, ${scrollY * 0.1}px, 0)`;
+          heroContent.style.opacity = `${Math.max(0, 1 - scrollY / 700)}`;
+        }
+        
+        if (aboutPhoto) {
+          const rect = aboutPhoto.getBoundingClientRect();
+          const viewHeight = window.innerHeight;
+          if (rect.top < viewHeight && rect.bottom > 0) {
+            const relativeScroll = (viewHeight - rect.top) / viewHeight;
+            aboutPhoto.style.transform = `translate3d(0, ${relativeScroll * 20}px, 0)`;
+          }
+        }
+        
+        ticking = false;
+      });
+      ticking = true;
+    }
   });
 }

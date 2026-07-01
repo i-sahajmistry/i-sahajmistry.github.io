@@ -182,18 +182,85 @@ ul, ol {
 /* ---------- Scroll Animations ---------- */
 .reveal {
   opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1),
-              transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform, opacity;
+  transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translateY(30px); /* default */
 }
+
+/* Modifiers */
+.reveal.slide-up { transform: translateY(60px); }
+.reveal.slide-down { transform: translateY(-60px); }
+.reveal.slide-left { transform: translateX(-60px); }
+.reveal.slide-right { transform: translateX(60px); }
+.reveal.scale-up { transform: scale(0.92); }
+
 .reveal.visible {
   opacity: 1;
-  transform: translateY(0);
+  transform: translate(0) scale(1);
 }
+
 .reveal-delay-1 { transition-delay: 0.1s; }
-.reveal-delay-2 { transition-delay: 0.2s; }
-.reveal-delay-3 { transition-delay: 0.3s; }
-.reveal-delay-4 { transition-delay: 0.4s; }
+.reveal-delay-2 { transition-delay: 0.18s; }
+.reveal-delay-3 { transition-delay: 0.26s; }
+.reveal-delay-4 { transition-delay: 0.34s; }
+.reveal-delay-5 { transition-delay: 0.42s; }
+
+/* ---------- Interactive Glassmorphism Spotlight ---------- */
+.timeline-card,
+.research-card,
+.skill-category,
+.edu-card,
+.achievement-card,
+.stat-card {
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  transition: transform var(--transition-smooth),
+              box-shadow var(--transition-smooth),
+              border-color var(--transition-smooth),
+              background-color var(--transition-smooth);
+}
+
+.timeline-card::after,
+.research-card::after,
+.skill-category::after,
+.edu-card::after,
+.achievement-card::after,
+.stat-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    350px circle at var(--mouse-x, 0px) var(--mouse-y, 0px),
+    rgba(255, 93, 93, 0.09),
+    transparent 80%
+  );
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.timeline-card:hover::after,
+.research-card:hover::after,
+.skill-category:hover::after,
+.edu-card:hover::after,
+.achievement-card:hover::after,
+.stat-card:hover::after {
+  opacity: 1;
+}
+
+.timeline-card > *,
+.research-card > *,
+.skill-category > *,
+.edu-card > *,
+.achievement-card > *,
+.stat-card > * {
+  position: relative;
+  z-index: 2;
+}
 
 /* ===================================================================
    NAVBAR
