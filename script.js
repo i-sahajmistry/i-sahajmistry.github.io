@@ -204,7 +204,7 @@ function initHeroCanvas() {
           ctx.beginPath();
           ctx.moveTo(particles[i].x, particles[i].y);
           ctx.lineTo(particles[j].x, particles[j].y);
-          ctx.strokeStyle = `rgba(79, 143, 247, ${opacity})`;
+          ctx.strokeStyle = `rgba(255, 93, 93, ${opacity})`;
           ctx.lineWidth = 0.5;
           ctx.stroke();
         }
@@ -215,7 +215,7 @@ function initHeroCanvas() {
     particles.forEach(p => {
       ctx.beginPath();
       ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(79, 143, 247, ${p.opacity})`;
+      ctx.fillStyle = `rgba(255, 93, 93, ${p.opacity})`;
       ctx.fill();
     });
   }
