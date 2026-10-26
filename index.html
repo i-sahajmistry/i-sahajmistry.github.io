@@ -65,7 +65,7 @@
       <div class="hero-content">
         <div class="hero-badge">
           <span class="dot"></span>
-          Open to research collaborations
+          Seeking 2027 Research &amp; Applied Scientist internships
         </div>
 
         <h1 class="hero-name">
@@ -75,7 +75,7 @@
         <p class="hero-title">
           <strong>Applied Scientist</strong> & <strong>AI Researcher</strong> specializing in
           Agentic AI, Multimodal LLMs, and Computer Vision.<br>
-          M.Tech, AI @ IIT Delhi · 4 publications at CVPR, MICCAI & ICASSP.
+          M.Tech, AI @ IIT Delhi · ICLR 2027 submission · Top 10 in Amazon ML Challenge 2026 · Publications at CVPR, MICCAI &amp; ICASSP.
         </p>
 
         <div class="hero-actions">
@@ -138,14 +138,15 @@
             I'm an <strong>Applied Scientist</strong> with 2+ years of industry experience in <strong>multimodal
               AI</strong>,
             <strong>vision-language models</strong>, and <strong>generative pipelines</strong>, complemented by a strong
-            research track record with <strong>4 publications</strong> at top-tier venues including CVPR, MICCAI, and
-            ICASSP.
+            research track record: <strong>4 publications</strong> at CVPR, MICCAI and ICASSP, and a paper on
+            <strong>speeding up multi-agent LLM systems</strong> under review at <strong>ICLR 2027</strong>.
           </p>
           <p class="reveal slide-right reveal-delay-1">
             My expertise spans <strong>agentic AI frameworks</strong> (LangChain, LangGraph, CrewAI),
             <strong>on-device model optimization</strong> (INT8 quantization, ONNX, TensorRT), and
             <strong>scalable ML inference</strong> (Triton, GKE, Cloud Run). I'm currently pursuing my
-            <strong>M.Tech in Machine Intelligence & Data Science at IIT Delhi</strong>.
+            <strong>M.Tech in Machine Intelligence & Data Science at IIT Delhi</strong>, working with Prof. Sayan Ranu, and
+            our team placed in the <strong>top 10 of 32,000+ teams</strong> in the Amazon ML Challenge 2026.
           </p>
 
           <div class="about-stats">
@@ -158,8 +159,8 @@
               <div class="stat-label">Publications</div>
             </div>
             <div class="stat-card reveal scale-up reveal-delay-4">
-              <div class="stat-number">8.91</div>
-              <div class="stat-label">CGPA / 10</div>
+              <div class="stat-number">Top 10</div>
+              <div class="stat-label">Amazon ML Challenge</div>
             </div>
           </div>
         </div>
@@ -274,9 +275,59 @@
     <div class="container">
       <span class="section-label reveal">Research & Projects</span>
       <h2 class="section-title reveal">Academic <span class="gradient-text">Research</span></h2>
-      <p class="section-subtitle reveal">From medical image segmentation to panoramic depth estimation and robotics.</p>
+      <p class="section-subtitle reveal">From faster multi-agent LLM systems and entity resolution at scale to medical imaging, depth estimation and robotics.</p>
 
       <div class="research-grid">
+
+        <!-- ProSpect -->
+        <div class="research-card reveal scale-up">
+          <div class="research-card-header">
+            <div>
+              <p class="research-institution">IIT Delhi · Prof. Sayan Ranu</p>
+              <h3 class="research-title">ProSpect: Faster Multi-Agent LLM Systems</h3>
+            </div>
+            <span class="research-icon">⚡</span>
+          </div>
+          <p class="research-desc">
+            Lossless speculative execution for multi-agent LLM systems. Predicts which agent runs next (link prediction
+            over an agent graph mined from past traces, with a lightweight GRU) and what it receives (a speculator LLM
+            with retrieval-augmented in-context learning), then runs it early and keeps only correct results.
+          </p>
+          <div class="research-metrics">
+            <span class="metric"><span class="metric-icon">🚀</span> 17–38% faster, identical outputs</span>
+            <span class="metric"><span class="metric-icon">📈</span> 6–28% better than prior SOTA</span>
+          </div>
+          <div class="research-card-footer">
+            <span class="tag tag-purple">ICLR 2027 (under review)</span>
+            <span class="tag">Multi-Agent LLMs</span>
+            <span class="tag tag-cyan">Speculative Execution</span>
+          </div>
+        </div>
+
+        <!-- Amazon ML Challenge -->
+        <div class="research-card reveal scale-up reveal-delay-1">
+          <div class="research-card-header">
+            <div>
+              <p class="research-institution">Amazon ML Challenge 2026</p>
+              <h3 class="research-title">Entity Resolution at Scale</h3>
+            </div>
+            <span class="research-icon">🔗</span>
+          </div>
+          <p class="research-desc">
+            Built in 3 days a pipeline linking 9.97M noisy multilingual records to 1.73M entities across 3 countries:
+            a fine-tuned e5 bi-encoder with FAISS HNSW for blocking, cross-encoders and two-stage LightGBM for matching,
+            an LLM judge for uncertain pairs, and self-training for an unlabeled country.
+          </p>
+          <div class="research-metrics">
+            <span class="metric"><span class="metric-icon">🏆</span> Top 10 of 32,000+ teams</span>
+            <span class="metric"><span class="metric-icon">🎯</span> 99.4% recall at 1.28 candidates/record</span>
+          </div>
+          <div class="research-card-footer">
+            <span class="tag tag-purple">0.9909 F0.5</span>
+            <span class="tag">FAISS</span>
+            <span class="tag tag-cyan">LLM Judge</span>
+          </div>
+        </div>
 
         <!-- BraTS -->
         <div class="research-card reveal scale-up">
@@ -463,11 +514,21 @@
     <div class="container">
       <span class="section-label reveal">Publications</span>
       <h2 class="section-title reveal">Published <span class="gradient-text">Research</span></h2>
-      <p class="section-subtitle reveal">4 publications at top-tier venues in computer vision and medical imaging.</p>
+      <p class="section-subtitle reveal">A paper under review at ICLR 2027 and 4 publications at top-tier venues in computer vision, medical imaging and signal processing.</p>
 
       <div class="pub-list">
         <div class="pub-item reveal slide-up">
           <span class="pub-number">01</span>
+          <div class="pub-content">
+            <p class="pub-title"><strong>Mistry Sahaj K.</strong>, et al. "ProSpect: Proactive Speculation for Lossless
+              Acceleration of Multi-Agent Systems." <em>Under review at the International Conference on Learning
+                Representations (ICLR).</em> 2027.</p>
+            <span class="pub-venue venue-iclr">📄 ICLR 2027 · Under Review</span>
+          </div>
+        </div>
+
+        <div class="pub-item reveal slide-up">
+          <span class="pub-number">02</span>
           <div class="pub-content">
             <p class="pub-title">Pierluigi Zama Ramirez, et al. "NTIRE 2024 Challenge on HR Depth from Images of
               Specular and Transparent Surfaces." <em>Proceedings of the IEEE/CVF Conference on Computer Vision and
@@ -479,7 +540,7 @@
 
 
         <div class="pub-item reveal slide-up reveal-delay-1">
-          <span class="pub-number">02</span>
+          <span class="pub-number">03</span>
           <div class="pub-content">
             <p class="pub-title"><strong>Mistry Sahaj K.</strong>, et al. "Multiscale Encoder and Omni-Dimensional
               Dynamic Convolution Enrichment in nnU-Net for Brain Tumor Segmentation." <em>International Conference on
@@ -489,7 +550,7 @@
         </div>
 
         <div class="pub-item reveal slide-up reveal-delay-2">
-          <span class="pub-number">03</span>
+          <span class="pub-number">04</span>
           <div class="pub-content">
             <p class="pub-title">Wang Longguang, et al. "NTIRE 2023 Challenge on Stereo Image Super-Resolution: Methods
               and Results." <em>Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition
@@ -499,7 +560,7 @@
         </div>
 
         <div class="pub-item reveal slide-up reveal-delay-3">
-          <span class="pub-number">04</span>
+          <span class="pub-number">05</span>
           <div class="pub-content">
             <p class="pub-title"><strong>Mistry Sahaj K.</strong>, et al. "Drone-vs-Bird: Drone Detection Using YOLOv7
               with CSRT Tracker." <em>International Conference on Acoustics, Speech and Signal Processing (ICASSP).
@@ -622,6 +683,14 @@
 
       <div class="achievements-grid">
         <div class="achievement-card reveal scale-up">
+          <div class="achievement-icon">🏆</div>
+          <div class="achievement-content">
+            <h4>Top 10 — Amazon ML Challenge 2026</h4>
+            <p>Ranked in the top 10 of 32,000+ teams in business entity resolution over ~10M multilingual records.</p>
+          </div>
+        </div>
+
+        <div class="achievement-card reveal scale-up">
           <div class="achievement-icon">📝</div>
           <div class="achievement-content">
             <h4>Academic Reviewer</h4>
@@ -681,8 +750,8 @@
       <span class="section-label reveal">Contact</span>
       <h2 class="section-title reveal">Let's <span class="gradient-text">Connect</span></h2>
       <p class="section-subtitle reveal">
-        Open to research collaborations, applied scientist roles, and interesting AI projects.
-        Feel free to reach out!
+        Looking for 2027 research and applied scientist internships: available for 4–6 weeks in December 2026,
+        or 12–14 weeks from mid-May 2027. Also open to research collaborations. Feel free to reach out!
       </p>
 
       <div class="contact-actions reveal">

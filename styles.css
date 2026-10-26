@@ -981,6 +981,12 @@ ul, ol {
   color: var(--clr-accent-2);
   border: 1px solid rgba(255, 138, 101, 0.2);
 }
+.venue-iclr {
+  background: rgba(99, 179, 237, 0.12);
+  color: #63b3ed;
+  border: 1px solid rgba(99, 179, 237, 0.25);
+}
+
 .venue-icassp {
   background: rgba(119, 141, 169, 0.12);
   color: var(--clr-accent-3);
